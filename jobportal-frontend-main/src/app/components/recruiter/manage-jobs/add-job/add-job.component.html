@@ -1,0 +1,112 @@
+<section class="site-section">
+    <div class="container">
+  <div class="d-flex" id="wrapper">
+    
+    <app-recruiter-menu></app-recruiter-menu>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item active"><button class="btn btn-info" type="submit" (click)="logout()">Logout</button></li>
+                      
+                       
+                    </ul>
+                   
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+      
+        <section style="background-color: #777a71;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-8">
+                  <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-12">
+                      <h5>Add New Job Detail</h5>
+
+                        <form (ngSubmit)=" addJob()">
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Job Title</label>
+                                <input type="text" class="form-control form-control-sm" id="title" placeholder="title" name="title" #title [(ngModel)]="job.title">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Category</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" [(ngModel)]="job.categoryId" name="categoryId" #categoryId>
+                                  <option selected>Job Category</option>
+                                  <option value="1">Software Developer</option>
+                                  <option value="2">UI/UX Designer</option>
+                                  <option value="3">Software Tester</option>
+                                  <option value="4">Project Lead</option>
+                                  <option value="5">Server Admin</option>
+                                </select>                              
+                              </div>
+                            </div>
+                            <div class="form-row">
+                            <div class="form-group col-md-12">
+                              <label for="inputAddress">Description</label>
+                              <textarea  class="form-control form-control-sm" id="address"  name="description" placeholder="Job Description" #description [(ngModel)]="job.description"></textarea>
+                            </div>
+                          </div>
+                            <div class="form-row">
+                            <div class="form-group col-md-4">
+                              <label for="inputAddress">Salary</label>
+                              <input type="number" class="form-control form-control-sm" id="salary"  name="salary" placeholder="salary" #salary [(ngModel)]="job.salary">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputAddress">Experience</label>
+                              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="experience" #experience [(ngModel)]="job.experience">
+                                <option selected>In Years</option>
+                                <option value="0">Fresher</option>
+                                <option value="1">1-5 years</option>
+                                <option value="5">5+ years</option>
+                                <option value="10">Above 10+</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputAddress">Last Date</label>
+                              <input type="datetime-local" class="form-control form-control-sm" id="lastDate"  name="lastDate" placeholder="" #lastDate [(ngModel)]="job.lastDate">
+                            </div>
+                          </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                <label for="inputCity">Location</label>
+                                <input type="text" class="form-control form-control-sm" id="location" name="location" #location [(ngModel)]="job.location">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="inputState">Type</label>
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="jobType" #jobType [(ngModel)]="job.jobType">
+                                  
+                                  <option value="Part time" >Part time</option>
+                                  <option value="Full time" selected>Full time</option>
+                                  
+                                </select>                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="inputZip">Vacancy</label>
+                                <input type="number" class="form-control form-control-sm" id="numberOfVacancy" name="numberOfVacancy" #numberOfVacancy [(ngModel)]="job.numberOfVacancy">
+                              </div>
+                            </div>
+                          
+                            <button type="submit" class="btn btn-primary btn-sm" >Post Job</button>
+                          </form>
+                     
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+       
+    </div>
+  </div>
+  </div>
+  </section>
+  

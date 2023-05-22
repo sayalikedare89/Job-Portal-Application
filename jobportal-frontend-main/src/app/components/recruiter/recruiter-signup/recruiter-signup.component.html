@@ -1,0 +1,51 @@
+<section class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mb-5">
+          <h2 class="mb-4">Recruiter Sign up</h2>
+          <form #signupForm="ngForm" class="p-4 border rounded" (ngSubmit)="onSubmit(signupForm)">
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Full Name</label>
+                <input type="text"  class="form-control" placeholder="Enter Full Name" name="name" ngModel>
+              </div>
+            </div>
+            <div class="row form-group">
+            <div class="col-md-12 mb-3 mb-md-0">
+              <label class="text-black" for="fname">User Name</label>
+              <input type="text"  class="form-control" placeholder="Enter User Name" name="username" ngModel>
+            </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Email</label>
+                <input type="text"  class="form-control" placeholder="Email address" name="email" ngModel>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Password</label>
+                <input type="password"  class="form-control" placeholder="Password" name="password" ngModel>
+              </div>
+            </div>
+            <div class="row form-group mb-4">
+              <div class="col-md-12 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Re-Type Password</label>
+                <input type="password"  class="form-control" placeholder="Re-type Password" name="repassword" ngModel>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="Sign Up" class="btn px-4 btn-primary text-white">
+              </div>
+            </div>
+
+          </form>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+  

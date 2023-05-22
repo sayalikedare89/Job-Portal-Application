@@ -1,0 +1,94 @@
+<section class="site-section">
+  <div class="container">
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar-->
+ <app-recruiter-menu></app-recruiter-menu>
+  <!-- Page content wrapper-->
+  <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <div class="container-fluid">
+            
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               
+                  <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                      <li class="nav-item active"><button class="btn btn-primary" type="submit" (click)="logout()">Logout</button></li>
+                    
+                     
+                  </ul>
+                 
+              </div>
+          </div>
+      </nav>
+      <!-- Page content-->
+      <section style="background-color: #777a71;">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-8">
+                <div class="card" style="border-radius: 15px;">
+                 
+                  <div class="card-body p-4">
+                    <div class="flex-grow-1 ms-3">
+                     <h5>Job Applications</h5>
+                    </div>
+                    <br>
+                    <div class="d-flex text-black">
+                      <table class="table">
+                        <thead class="table-dark">
+                          <tr>
+                            
+                            <th scope="col">Job Id</th>
+                            <th scope="col">Job Role</th>
+                            <th scope="col">Applicant</th>  
+                            <th scope="col">Picture</th>  
+                                              
+                            <th scope="col"> Email</th>
+                            <th scope="col"> Contact</th>
+                            <th scope="col">Action</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let application of applicationList">
+                            
+                            <td>{{application.job.id}}</td>
+                            <td>{{application.job.title}}</td>
+                            <td>{{application.jobSeeker.name}}</td>
+                            <td><img style="height:20px;width:20px;" src="data:image/png;base64,{{application.jobSeeker.image}}" alt="Image" class="img-fluid"></td>
+                            <td>{{application.jobSeeker.email}}</td>
+                             <td>{{application.jobSeeker.phone}}</td>
+                             <form (ngSubmit)="statusUpdate()">
+                             <td>
+                              
+                              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="status" #status [(ngModel)]="application.status" >
+                                <option selected>Change job status</option>
+                                <option value="Sortlisted">Sortlisted</option>
+                                <option value="Interview Scheduled">Interview Scheduled</option>
+                                <option value="Technical round Scheduled">Technical round Scheduled</option>
+                                <option value="HR round Scheduled">HR round Scheduled</option>
+                                <option value="Canceled">Canceled</option>
+                                <option value="Rejected">Rejected</option>
+                              </select>
+                           
+
+                            </td>
+                            <td><button type="button" class="btn btn-secondary btn-sm">Update</button></td>
+                          </form>
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+     
+  </div>
+</div>
+</div>
+</section>

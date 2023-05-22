@@ -1,0 +1,80 @@
+<section class="site-section">
+    <div class="container">
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom bg-light"><b>Welcome, &nbsp;User</b></div>
+      <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" routerLink="/jobseeker-profile">Profile</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" routerLink="/jobseeker-resume">Resume</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" routerLink="/jobseeker-image">Profile Image</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" routerLink="/jobseeker-password-change">Password Change</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" routerLink="/jobseeker-applications-status">Apllication Status</a>
+        </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item active"><button class="btn btn-primary" type="submit" (click)="logout()">Logout</button></li>
+                      
+                       
+                    </ul>
+                   
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <section style="background-color: #777a71;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-8">
+                  <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+                      <div class="d-flex text-black">
+                        <table class="table">
+                          <thead class="table-dark">
+                            <tr>
+                              <th scope="col">Application Id</th>
+                              <th scope="col">Job Id</th>
+                              <th scope="col">Company</th>
+                              <th scope="col">Post</th>  
+                             
+                                                       
+                              <th scope="col">Application Date</th>
+                              <th scope="col">Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let app of jobApplications">
+                              <th scope="row">{{app.id}}</th>
+                              <td>{{app.job.id}}</td>
+                              <td>{{app.job.recruiter.company}}</td>
+                              <td>{{app.job.title }}</td>
+                            
+                            
+                               <td>{{app.job.createdAt | date}}</td>
+                               <td><button type="button"  class="btn btn-warning btn-sm">{{app.status}}</button></td>
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+       
+    </div>
+</div>
+</div>
+</section>

@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+.list-group-item[_ngcontent-bfd-c15] + .list-group-item[_ngcontent-bfd-c15] {
+    /* border-top-width: 0; */
+    background-color: beige !important;
+}
